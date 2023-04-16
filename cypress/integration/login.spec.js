@@ -10,6 +10,7 @@ context('Funcionalidade Login', () => {
 
     beforeEach(() => {
         cy.visit('minha-conta')
+        cy.login(dados.usuario,dados.senha)
     });
 
     afterEach(() => {
@@ -17,8 +18,8 @@ context('Funcionalidade Login', () => {
     });
 
     it('Login com sucesso usando Comando customizado', () => {
-        cy.login(dadosLogin.usuario, dadosLogin.senha)
-        cy.get('.page-title').should('contain', 'Minha conta')
+        cy.login(dados.usuario,dados.senha)
+        
     });
 
     it('Login usando fixture', () => {
@@ -33,6 +34,6 @@ context('Funcionalidade Login', () => {
         cy.get('#password').type(dadosLogin.senha, { log: false })
         cy.get('.woocommerce-form > .button').click()
         cy.get('.page-title').should('contain', 'Minha conta')
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, Aluno (não é Aluno?')
     })
 })

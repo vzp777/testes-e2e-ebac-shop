@@ -8,7 +8,7 @@
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "cy:dashboard": "",
-    "cy:report": ""
+    "cy:report": "cypress run --record --key 124b487a-5c3d-433c-8d36-65a38c098b3a"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": ""
+
   },
   "homepage": "",
   "devDependencies": {
